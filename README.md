@@ -85,9 +85,10 @@ src/
 запуске не чаще раза в сутки, скачивание — только по кнопке. Манифест и APK
 проверяются по RSA-подписи и SHA-256; установку подтверждает Android.
 
-Обновления публикуются в публичном репозитории
-[Voenstalc/tabletka](https://github.com/Voenstalc/tabletka) через GitHub
-Releases: `version.json` и APK лежат в ассетах последнего релиза.
+GitHub ([Voenstalc/tabletka](https://github.com/Voenstalc/tabletka)) — только
+исходный код. Файлы обновлений (подписанный `version.json` и APK) лежат на
+VPS проекта и раздаются по HTTPS с приватным CA:
+`https://48.102.177.243:8443/updates/tabletka/android/version.json`.
 
 ## Ограничения
 

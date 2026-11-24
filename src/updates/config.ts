@@ -1,8 +1,8 @@
 import type { UpdateConfig } from './types';
 
-// Public GitHub Release: immutable APK asset per tag, `latest` manifest.
+// The update showcase lives on the project VPS; GitHub holds only source code.
 const PRODUCTION_MANIFEST =
-  'https://github.com/Voenstalc/tabletka/releases/latest/download/version.json';
+  'https://48.102.177.243:8443/updates/tabletka/android/version.json';
 
 // Only for local end-to-end tests. A shipped build must always use the
 // production URL, so the override is ignored outside __DEV__.
