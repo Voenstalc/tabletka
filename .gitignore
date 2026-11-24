@@ -25,10 +25,13 @@ expo-env.d.ts
 npm-debug.*
 yarn-debug.*
 yarn-error.*
+dist-check/
 
 # macOS
 .DS_Store
 *.pem
+# Публичный CA сервера обновлений — не секрет, нужен config-плагину.
+!certs/update-ca.pem
 
 # local env files
 .env*.local

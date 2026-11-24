@@ -1,25 +1,67 @@
 {
   "expo": {
-    "name": "app",
-    "slug": "app",
-    "version": "1.0.0",
+    "name": "Таблетка",
+    "slug": "tabletka",
+    "version": "0.2.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
+    "scheme": "tabletka",
     "userInterfaceStyle": "light",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "ru.tabletka.app",
+      "infoPlist": {
+        "NSUserNotificationsUsageDescription": "Напоминания о приёме лекарств и предупреждения о низком остатке."
+      }
     },
     "android": {
+      "package": "ru.tabletka.app",
+      "versionCode": 2,
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "SCHEDULE_EXACT_ALARM",
+        "POST_NOTIFICATIONS",
+        "VIBRATE"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-status-bar",
+      "expo-sqlite",
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/android-icon-monochrome.png",
+          "color": "#2F6FED",
+          "defaultChannel": "doses-sound-vib",
+          "enableRemoteNotifications": false
+        }
+      ],
+      "expo-background-task",
+      "expo-sharing",
+      [
+        "expo-file-system",
+        {
+          "enableFileSharing": true,
+          "supportsOpeningDocumentsInPlace": true
+        }
+      ],
+      "expo-font",
+      "./plugins/withUpdateSystem",
+      ["./plugins/withAndroidBuildPaths", { "buildStagingDirectory": "D:/t" }],
+      "./plugins/withReleaseSigning"
+    ],
+    "experiments": {
+      "typedRoutes": true
     }
   }
 }
