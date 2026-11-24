@@ -58,7 +58,8 @@
       "expo-font",
       "./plugins/withUpdateSystem",
       ["./plugins/withAndroidBuildPaths", { "buildStagingDirectory": "D:/t" }],
-      "./plugins/withReleaseSigning"
+      "./plugins/withReleaseSigning",
+      "./plugins/withReleaseBuildSafety"
     ],
     "experiments": {
       "typedRoutes": true
